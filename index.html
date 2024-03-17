@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Sanner</title>
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1204218568288378910/1218632598142849114/justica.ico?ex=66085f0c&is=65f5ea0c&hm=112d062ce92b35a2b81e1f2dabe5630c0f026534af393801fa1d699fa671c865">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #222, #111); /* Gradiente para um fundo mais escuro */
+            color: #fff; /* Texto branco */
+            overflow: hidden; /* Ocultar a barra de rolagem horizontal */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative; /* Para os efeitos de splash */
+        }
+        
+        .container {
+            text-align: center;
+            position: relative; /* Para o efeito de relevo */
+            z-index: 1; /* Para o efeito de relevo */
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #f39c12; /* Laranja */
+            margin-bottom: 20px;
+        }
+        
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background-color: #f39c12; /* Laranja */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Adicionando transição de transformação */
+        }
+        
+        .button:hover {
+            background-color: #e67e22; /* Laranja mais escuro */
+            transform: scale(1.1); /* Efeito de escala no hover */
+        }
+
+        #mensagem {
+            display: none;
+            color: rgb(150, 150, 150); /* Cinza */
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Efeito de relevo */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+            pointer-events: none; /* Para evitar interações com o mouse */
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Justice SS</h1>
+        <button class="button" onclick="downloadFile()">Baixar Scanner</button>
+        <p id="mensagem">Obrigado por fazer o download de nosso novo scanner!</p>
+    </div>
+    <script>
+        function downloadFile() {
+            var fileUrl = "https://cdn.discordapp.com/attachments/1204218568288378910/1218936364431835177/Justice_Scanner.exe?ex=660979f4&is=65f704f4&hm=7b1f4d1c07597b884b5cf499576961d5866ee32e55959551436df45e610de045&";
+            var link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = "Justice_Scanner.exe";
+            document.body.appendChild(link);
+            setTimeout(function() {
+                link.click();
+                document.getElementById("mensagem").style.display = "block";
+            }, 100);
+        }
+    </script>
+</body>
+</html>
